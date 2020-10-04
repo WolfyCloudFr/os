@@ -11,6 +11,8 @@ TIMEZONE ?= Europe/Moscow
 REPO_URL ?= http://de3.mirror.archlinuxarm.org
 BUILD_OPTS ?=
 
+NFS_URL ?= 
+
 WIFI_ESSID ?=
 WIFI_PASSWD ?=
 WIFI_IFACE ?= wlan0
@@ -71,7 +73,8 @@ os: $(_BUILDER_DIR)
 		HOSTNAME=$(HOSTNAME) \
 		LOCALE=$(LOCALE) \
 		TIMEZONE=$(TIMEZONE) \
-		REPO_URL=$(REPO_URL)
+		REPO_URL=$(REPO_URL) \
+		NFS_URL='$(NFS_URL)'
 
 
 $(_BUILDER_DIR):
